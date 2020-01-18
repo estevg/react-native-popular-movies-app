@@ -1,41 +1,56 @@
 import React, { useEffect, useState } from 'react';
 import { FlatList, View, StyleSheet } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+// Components
 import Movie from '../../components/Movies/Movies';
 import Navbar from '../../components/Navbar/Navbar';
+// Redux
+import { useDispatch, useSelector } from 'react-redux';
+import { getMovies } from '../../redux/actions/MovieActions';
 
-const App = () => {
-	const [ test, guardartest ] = useState([]);
+const MovieHome = (props) => {
+	const dispatch = useDispatch();
 
-	useEffect(() => {
-		fetch('https://apimovieapp.herokuapp.com/top-movie/')
-			.then((res) => res.json())
-			.then((respuesta) => {
-				guardartest(respuesta);
+	useEffect(
+		() => {
+			const getmovies = () => dispatch(getMovies());
+			getmovies();
+		},
+		[ dispatch ]
+	);
+
+	const data = useSelector((state) => state.movies.movies);
+
+	const viewMovie = (item) => {
+		props.navigation.dispatch(
+			NavigationActions.navigate({
+				routeName: 'MovieDetails',
+				params: {
+					id: item.id
+				}
 			})
-			.catch((error) => {
-				console.log(error);
-			});
+		);
+	};
 
-		fetch('https://api.themoviedb.org/3/genre/movie/list?api_key=5284936e2774291ab4701bf2b2ac9f6d&language=en-US')
-			.then((res) => res.json())
-			.then((respuesta) => {
-				guardarGenero(respuesta);
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	}, []);
+	if (!data) return null;
 
 	return (
 		<View style={{ flex: 1 }}>
-			<Navbar />
+			<Navbar isHome={true} title="Today" navigation={props.navigation} />
 			<View style={styles.container}>
 				<FlatList
 					showsVerticalScrollIndicator={false}
 					ScrollView={true}
-					data={test}
+					data={data}
 					keyExtractor={(item, index) => index.toString()}
-					renderItem={({ item, index }) => <Movie data={item} />}
+					renderItem={({ item, index }) => (
+						<Movie
+							data={item}
+							onPress={() => {
+								viewMovie(item);
+							}}
+						/>
+					)}
 				/>
 			</View>
 		</View>
@@ -49,4 +64,4 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default App;
+export default MovieHome;

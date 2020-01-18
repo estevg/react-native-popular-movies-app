@@ -1,10 +1,9 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, TouchableOpacity } from 'react-native';
 import { Icon, Rating } from 'react-native-elements';
 import styles from './style';
 
-const Movie = ({ data }) => {
-	// Generos
+const Movie = ({ data, onPress }) => {
 	const getGeners = (genrsId) => {
 		switch (genrsId) {
 			case 12:
@@ -56,12 +55,17 @@ const Movie = ({ data }) => {
 			</View>
 			<View style={styles.containerText}>
 				<Text style={styles.title}>{data.title}</Text>
-				<Rating type="custom" imageSize={15} readonly ratingCount={parseInt(data.vote_average)} />
+				<Rating
+					type="custom"
+					imageSize={15}
+					startingValue={Math.round(data.vote_average)}
+					ratingCount={Math.round(data.vote_average)}
+				/>
 				<Text style={styles.genre}>{getGeners(data.genre_ids[0])}</Text>
 			</View>
-			<View style={styles.button}>
+			<TouchableOpacity style={styles.button} onPress={onPress}>
 				<Icon name="ticket" type="font-awesome" color="#eefaff" />
-			</View>
+			</TouchableOpacity>
 		</View>
 	);
 };

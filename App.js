@@ -1,8 +1,11 @@
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { fonts } from './assets/staticFIles';
 import { cacheFonts } from './src/utils/cacheFonts';
 import Home from './src/container/Home/Home';
+import AppNavigator from './src/navegation'
+import store from './src/redux/store';
+import { Provider } from 'react-redux';
 
 const App = () => {
 	useEffect(() => {
@@ -10,9 +13,11 @@ const App = () => {
 	});
 
 	return (
-		<View style={{ flex: 1 }}>
-			<Home />
-		</View>
+		<Provider store={store}>
+			<View style={{ flex: 1 }}>
+				<AppNavigator />
+			</View>
+		</Provider>
 	);
 };
 
