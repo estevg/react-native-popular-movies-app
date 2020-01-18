@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FlatList, View, StyleSheet } from 'react-native';
+import { FlatList, View, StyleSheet, SafeAreaView } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 // Components
 import Movie from '../../components/Movies/Movies';
@@ -35,7 +35,7 @@ const MovieHome = (props) => {
 	if (!data) return null;
 
 	return (
-		<View style={{ flex: 1 }}>
+		<SafeAreaView style={{ flex: 1 }}>
 			<Navbar isHome={true} title="Today" navigation={props.navigation} />
 			<View style={styles.container}>
 				<FlatList
@@ -53,14 +53,15 @@ const MovieHome = (props) => {
 					)}
 				/>
 			</View>
-		</View>
+		</SafeAreaView>
 	);
 };
 
 const styles = StyleSheet.create({
 	container: {
 		marginHorizontal: 40,
-		marginTop: 150
+		marginBottom: 50,
+		// marginTop: 150
 	}
 });
 

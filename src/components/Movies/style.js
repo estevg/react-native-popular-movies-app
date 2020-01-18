@@ -21,7 +21,9 @@ export default StyleSheet.create({
 		top: -10,
 		right: 30,
 		borderRadius: 20,
-		resizeMode: 'center'
+		resizeMode: 'contain',
+		overflow: 'hidden'
+
 	},
 	containerText: {
 		width: '60%',
@@ -44,6 +46,7 @@ export default StyleSheet.create({
 		borderRadius: 10,
 		justifyContent: 'center',
 		alignItems: 'center',
-		top: 40
+		top: 40,
+		overflow: 'hidden'
 	}
 });

@@ -6,7 +6,7 @@ export default StyleSheet.create({
 	container: {
 		height: '30%',
 		width: width,
-		position: 'absolute'
+		// position: 'absolute'
 	},
 	navbar: {
 		flex: 1,

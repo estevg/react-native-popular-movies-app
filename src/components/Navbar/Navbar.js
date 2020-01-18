@@ -6,8 +6,8 @@ import styles from './style';
 
 const Navbar = ({ isHome, title, navigation, image }) => {
 	return (
-		<SafeAreaView style={styles.container}>
-			<LinearGradient colors={[ '#3d98ff', '#673aff', '#673aff' ]} style={styles.navbar}>
+		<View style={styles.container}>
+			<LinearGradient start={[0.1, 0.1]} colors={[ '#3d98ff', '#673aff', '#673aff' ]} style={styles.navbar}>
 				{isHome ? (
 					<View>
 						<View style={styles.buttonContainer}>
@@ -34,7 +34,7 @@ const Navbar = ({ isHome, title, navigation, image }) => {
 					</ImageBackground>
 				)}
 			</LinearGradient>
-		</SafeAreaView>
+		</View>
 	);
 };
 

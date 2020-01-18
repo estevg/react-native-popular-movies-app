@@ -3,10 +3,10 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
 	container: {
 		marginHorizontal: 20,
-		marginTop: 200,
+		// marginTop: 200,
 		flex: 1,
 		justifyContent: 'space-around',
-		top: -30
+		top: -70
 	},
 	movieContainer: {
 		flexDirection: 'row',
@@ -22,7 +22,8 @@ export default StyleSheet.create({
 		width: 150,
 		height: 200,
 		borderRadius: 20,
-		resizeMode: 'center'
+		resizeMode: 'contain',
+		overflow: 'hidden'
 	},
 	textContainer: {
 		flex: 1,
@@ -56,6 +57,7 @@ export default StyleSheet.create({
 		height: 50,
 		width: '100%',
 		borderRadius: 10,
+		overflow: 'hidden',
 		justifyContent: 'center',
 		alignItems: 'center',
 		flexDirection: 'row'
