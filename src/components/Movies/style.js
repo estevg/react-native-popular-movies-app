@@ -3,30 +3,44 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
 	containerMovie: {
 		backgroundColor: 'white',
-		borderWidth: StyleSheet.hairlineWidth,
 		color: '#bdc3c7',
 		width: '80%',
 		flexDirection: 'row',
 		margin: 30,
-		borderRadius: 10,
 		justifyContent: 'space-between',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.29,
+		shadowRadius: 4.65,
+		elevation: 7,
+		borderRadius: 10
 	},
 	conatinerImage: {
-		width: 70,
-		height: 140
+		width: 90,
+		height: 140,
+		top: -10,
+		right: 20,
+		borderRadius: 10,
+		overflow: 'hidden',
+		resizeMode: 'contain',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 2
+		},
+		shadowOpacity: 0.25,
+		shadowRadius: 3.84,
+		elevation: 5
 	},
 	image: {
-		width: 90,
-		height: 145,
-		top: -10,
-		right: 30,
-		borderRadius: 20,
-		resizeMode: 'contain',
-		overflow: 'hidden'
-
+		width: '100%',
+		height: '100%'
 	},
 	containerText: {
-		width: '60%',
+		width: '55%',
 		justifyContent: 'space-around',
 		alignItems: 'flex-start'
 	},
@@ -44,9 +58,19 @@ export default StyleSheet.create({
 		height: 50,
 		width: 50,
 		borderRadius: 10,
+		overflow: 'hidden',
 		justifyContent: 'center',
 		alignItems: 'center',
 		top: 40,
-		overflow: 'hidden'
+		overflow: 'hidden',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 1
+		},
+		shadowOpacity: 0.2,
+		shadowRadius: 1.41,
+
+		elevation: 2
 	}
 });

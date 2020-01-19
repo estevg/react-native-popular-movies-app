@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View, StyleSheet, SafeAreaView } from 'react-native';
 import MovieDetail from '../../components/MovieDetails/MovieDetail';
 // Components
 import Navbar from '../../components/Navbar/Navbar';
@@ -24,10 +24,10 @@ const HomeDetails = (props) => {
 
 	if (!data) return null;
 	return (
-		<View style={styles.container}>
+		<SafeAreaView style={styles.container}>
 			<Navbar navigation={props.navigation} image={data.backdrop_path} />
 			<MovieDetail data={data} />
-		</View>
+		</SafeAreaView>
 	);
 };
 

@@ -3,11 +3,26 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
 	container: {
 		marginHorizontal: 20,
-		// marginTop: 200,
 		flex: 1,
-		justifyContent: 'space-around',
 		top: -70
 	},
+	movieDetail: {
+		flex: 1,
+		justifyContent: 'space-between',
+		backgroundColor: 'white',
+		padding: 10,
+		borderRadius: 10,
+		overflow: 'hidden',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.29,
+		shadowRadius: 4.65,
+		elevation: 7
+	},
+
 	movieContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
@@ -16,14 +31,22 @@ export default StyleSheet.create({
 	imageContainer: {
 		width: 150,
 		height: 200,
-		marginRight: 20
+		marginRight: 20,
+		borderRadius: 20,
+		overflow: 'hidden',
+		resizeMode: 'contain',
+		shadowColor: '#000',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.29,
+		shadowRadius: 4.65,
+		elevation: 7
 	},
 	image: {
-		width: 150,
-		height: 200,
-		borderRadius: 20,
-		resizeMode: 'contain',
-		overflow: 'hidden'
+		width: '100%',
+		height: '100%'
 	},
 	textContainer: {
 		flex: 1,
@@ -54,18 +77,27 @@ export default StyleSheet.create({
 	},
 	buttonContainer: {
 		backgroundColor: '#0dbaff',
-		height: 50,
+		height: 60,
 		width: '100%',
 		borderRadius: 10,
 		overflow: 'hidden',
 		justifyContent: 'center',
 		alignItems: 'center',
-		flexDirection: 'row'
+		flexDirection: 'row',
+		shadowColor: '#0dbaff',
+		shadowOffset: {
+			width: 0,
+			height: 3
+		},
+		shadowOpacity: 0.29,
+		shadowRadius: 4.65,
+		elevation: 7,
+		justifyContent: 'space-around'
 	},
 	textButton: {
 		color: 'white',
 		fontFamily: 'raleway-bold',
-		fontSize: 20,
+		fontSize: 25,
 		marginRight: 10
 	}
 });
