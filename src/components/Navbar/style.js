@@ -1,11 +1,11 @@
-import { StyleSheet, Dimensions } from 'react-native';
+import { StyleSheet, Dimensions, Platform, StatusBar } from 'react-native';
 
 const { height, width } = Dimensions.get('window');
 
 export default StyleSheet.create({
 	container: {
 		height: '30%',
-		width: width,
+		width: width
 		// position: 'absolute'
 	},
 	navbar: {
@@ -17,13 +17,12 @@ export default StyleSheet.create({
 		color: 'white',
 		fontWeight: '700',
 		marginHorizontal: 20,
-		marginBottom: 30
+		paddingTop: 30
 	},
 	buttonContainer: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
-		marginHorizontal: 20,
-		paddingBottom: 30
+		marginHorizontal: 20
 	},
 	imageContainer: {
 		width: '100%',

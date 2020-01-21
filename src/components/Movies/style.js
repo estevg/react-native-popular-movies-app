@@ -4,7 +4,7 @@ export default StyleSheet.create({
 	containerMovie: {
 		backgroundColor: 'white',
 		color: '#bdc3c7',
-		width: '80%',
+		width: '70%',
 		flexDirection: 'row',
 		margin: 30,
 		justifyContent: 'space-between',

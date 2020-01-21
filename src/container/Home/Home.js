@@ -35,12 +35,12 @@ const MovieHome = (props) => {
 	if (!data) return null;
 
 	return (
-		<SafeAreaView style={{ flex: 1 }}>
+		<SafeAreaView style={{ flex: 1, backgroundColor: 'white' }}>
 			<Navbar isHome={true} title="Today" navigation={props.navigation} />
 			<View style={styles.container}>
 				<FlatList
 					showsVerticalScrollIndicator={false}
-					ScrollView={true}
+					// ScrollView={true}
 					data={data}
 					keyExtractor={(item, index) => index.toString()}
 					renderItem={({ item, index }) => (
@@ -60,8 +60,11 @@ const MovieHome = (props) => {
 const styles = StyleSheet.create({
 	container: {
 		marginHorizontal: 40,
-		marginBottom: 50,
-		// marginTop: 150
+
+		height: '100%',
+		width: '100%',
+		flex: 1,
+		justifyContent: 'center'
 	}
 });
 

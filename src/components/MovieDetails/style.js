@@ -1,32 +1,28 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
+const { height, width } = Dimensions.get('window');
 
 export default StyleSheet.create({
 	container: {
 		marginHorizontal: 20,
 		flex: 1,
-		top: -70
+		top: -70,
+		height: '100%',
+		width: '90%'
 	},
 	movieDetail: {
-		flex: 1,
-		justifyContent: 'space-between',
 		backgroundColor: 'white',
 		padding: 10,
 		borderRadius: 10,
 		overflow: 'hidden',
-		shadowColor: '#000',
-		shadowOffset: {
-			width: 0,
-			height: 3
-		},
-		shadowOpacity: 0.29,
-		shadowRadius: 4.65,
-		elevation: 7
+		flex: 1,
+		alignItems: 'center'
 	},
 
 	movieContainer: {
 		flexDirection: 'row',
-		justifyContent: 'space-between',
-		alignItems: 'center'
+		alignItems: 'center',
+		marginBottom: 50,
+		marginHorizontal: 10
 	},
 	imageContainer: {
 		width: 150,
@@ -49,12 +45,11 @@ export default StyleSheet.create({
 		height: '100%'
 	},
 	textContainer: {
-		flex: 1,
 		flexDirection: 'column',
 		width: '50%',
 		justifyContent: 'space-around',
-		alignItems: 'flex-start',
-		top: 30
+		alignItems: 'flex-start'
+		// top: 30
 	},
 	title: {
 		fontFamily: 'raleway-bold',
@@ -69,7 +64,7 @@ export default StyleSheet.create({
 	overviewContainer: {
 		justifyContent: 'center',
 		alignItems: 'center',
-		marginTop: 20
+		marginBottom: 50
 	},
 	textOverview: {
 		fontFamily: 'raleway-bold',
